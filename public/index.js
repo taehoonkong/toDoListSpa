@@ -68,31 +68,19 @@
     })
   }
 
-  function userIsLogin() {
+  function signUpAxios() {
     render({
-      target: '.authComponent',
-      templatePath: '/templates/authComponent.ejs',
+      target: '#myModal',
+      templatePath: '/templates/modalComponent.ejs',
       dataPath: '/api/userIsLogin'
-    }).then(authCompEl => {
-      /* authentication */
-      const logInBtn = authCompEl.querySelector('.loginBtn button[type=button]');
-      const logOutBtn = authCompEl.querySelector('.userInfo input[type=button]');
-      const userNameField = authCompEl.querySelector('.userName input[type=text]');
-      const passWordField = authCompEl.querySelector('.passWord input[type=password]');
-      
-      /* signup */
-      const signUpModal = authCompEl.querySelector('.navSignUp button[type=button]');
-      const signUpId = document.querySelector('.signUpId');
-      const signUpEmail = document.querySelector('.signUpEmail');
-      const signUpPw = document.querySelector('.signUpPw');
-      const signUpRePw = document.querySelector('.signUpRePw');
-      const signUpRequest = document.querySelector('.signUpBtn');
-
-      if(signUpModal) {
-        signUpModal.addEventListener('click', e => {
-          $('#myModal').modal();
-        });
-      }
+    }).then(modalCompEl => {
+      /* signup request */
+      const signUpId = modalCompEl.querySelector('.signUpId');
+      const signUpEmail = modalCompEl.querySelector('.signUpEmail');
+      const signUpPw = modalCompEl.querySelector('.signUpPw');
+      const signUpRePw = modalCompEl.querySelector('.signUpRePw');
+      const signUpRequest = modalCompEl.querySelector('.signUpBtn');
+      console.log('signUp?', signUpId, signUpEmail, signUpPw, signUpRePw, signUpRequest);
 
       if(signUpRequest) {
         signUpRequest.addEventListener('click', e => {
@@ -110,14 +98,38 @@
               alert(`${res.data.username}님 가입을 환영합니다.`);
               $('#myModal').modal('hide');
             })
-            .catch(res => {
+            .catch(err => {
               signUpId.value = "";
               signUpEmail.value = "";
               signUpPw.value= "";
               signUpRePw.value = "";
-              alert(res.response.data);
+              alert(err.response.data);
             })
         })
+      }
+    })
+  }
+
+  function userIsLogin() {
+    render({
+      target: '.authComponent',
+      templatePath: '/templates/authComponent.ejs',
+      dataPath: '/api/userIsLogin'
+    }).then(authCompEl => {
+      /* authentication */
+      const logInBtn = authCompEl.querySelector('.loginBtn button[type=button]');
+      const logOutBtn = authCompEl.querySelector('.userInfo input[type=button]');
+      const userNameField = authCompEl.querySelector('.userName input[type=text]');
+      const passWordField = authCompEl.querySelector('.passWord input[type=password]');
+      
+      /* signup */
+      const signUpModal = authCompEl.querySelector('.navSignUp button[type=button]');
+
+      if(signUpModal) {
+        signUpModal.addEventListener('click', e => {
+          $('#myModal').modal();
+          signUpAxios();
+        });
       }
 
       if (logOutBtn) {

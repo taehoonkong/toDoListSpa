@@ -231,7 +231,8 @@ app.get('/logout', (req, res) => {
 
 app.post('/signup', jsonMiddleware, (req, res) => {
   const {username, email, password, password2} = req.body;
-  if (usernameCheck(username)) {
+  const checkUser = usernameCheck(username);
+  if (checkUser) {
     if (password === password2) {
       const todo = signUpRequest({username, email, password});
       res.send(todo);
