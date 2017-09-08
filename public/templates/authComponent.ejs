@@ -1,0 +1,22 @@
+<%if (!data.user) { %>
+  <div class="navSignUp">
+    <button type="button">회원가입 <i class="fa fa-plus-square"></i></button>
+  </div>
+  <ul class="navLogin">
+    <li class="userName">
+      <i class="fa fa-user-circle"></i>
+      <input type="text" name="username" placeholder="아이디"/>
+    </li>
+    <li class="passWord">
+      <i class="fa fa-key"></i>
+      <input type="password" name="password" placeholder="비밀번호"/>
+    </li>
+    <li class="loginBtn">
+      <button type="button">로그인 <i class="fa fa-sign-in"></i></button>
+    </li>
+  </ul>
+<% } else { %>
+  <div class="userInfo">
+    <p><i class="fa fa-user-circle"></i>환영합니다 <%= data.user.username %> 님!<input type="button" value="로그아웃"></p>
+  </div>
+<% } %>

@@ -1,0 +1,389 @@
+/*@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);*/
+@font-face{font-family:'Hanna'; src:url('./dist/BM-HANNA.ttf')}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Hanna', sans-serif;
+}
+
+/* footer always bottom */
+
+html {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
+/* end */
+
+li {
+  list-style : none;
+}
+
+h1 {
+  text-align: center;
+  padding: 10px;
+}
+
+/* nav bar */
+a {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.authComponent i {
+  color: white;
+  margin-right: 5px;
+}
+
+.statusBar {
+  background-color: black;
+  height: 50px;
+}
+
+.navHeader {
+  float: left;
+  font-size: 250%;
+  line-height: 50px;
+  width: 20%;
+  text-align: center;
+}
+
+.navHeader i {
+  color: #EFC050;
+}
+
+.navLogin::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.navLogin {
+  float: right;
+  margin-bottom: 0;
+  height: 50px;
+  font-size: 130%;
+  width: 60%;
+  text-align: right;
+}
+
+.userName, .passWord, .loginBtn {
+  display: inline-block !important;
+  margin-left: 10px;
+}
+
+.userName input, .passWord input {
+  padding: 5px 10px;
+}
+
+.loginBtn button {
+  display: inline-block;
+  height: 50px;
+  border: 0;
+  border-right: 8px solid orange;
+  padding: 0 10px;
+  color: white;
+  background-color: #009B77;
+  margin-right: 20px;
+}
+
+.navSignUp {
+  float: right;
+  line-height: 50px;
+  font-size: 140%;
+  width: 10%;
+}
+
+.navSignUp button {
+  border: 0;
+  padding: 0 10px;
+  background-color: #EFC050;
+}
+
+.navSignUp i {
+  color: black;
+}
+
+.userInfo {
+  float: right;
+  font-size: 140%;
+}
+
+.userInfo p {
+  line-height: 50px;
+  color: white;
+  font-size: 120%;
+  margin-bottom: 0;
+}
+
+.userInfo input[type=button] {
+  border: 0;
+  background-color: red;
+  padding: 0 10px;
+  margin-left: 20px;
+  margin-right: 50px;
+}
+
+/* nav bar end */
+.todo-list::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.todo-item {
+  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 24.25%;
+  height: 273px;
+  background-color: black;
+}
+
+.todo-item:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.todo-item:not(:nth-of-type(4n+1)) {
+  margin-left: 0.95%;
+}
+
+.todo-item:nth-of-type(n-3) {
+  margin-top: 1%;
+}
+
+.todo-item-content-task {
+  background-color: #009B77;
+  color: white;
+  font-size: 130%;
+  height: 40px;
+}
+
+.todo-item-content-task > p:nth-child(1) {
+  display: inline-block;
+  width: 25%;
+  margin-bottom: 0;
+  padding: 0 10px;
+  line-height: 40px;
+  color: #e6e6e6;
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  border-color: #e6e6e6;
+}
+
+.todo-item-content-task > p:nth-child(2) {
+  display: inline-block;
+  width: 68%;
+  margin-bottom: 0;
+  padding-left: 10px;
+  line-height: 40px;
+  text-align: left;
+}
+
+.todo-item-content-task > i {
+  padding-right: 2px;
+  color: #EFC050;
+}
+
+.todo-item-content-content {
+  margin: 20px 10px 10px;
+  height: 140px;
+  font-size: 120%;
+  overflow: hidden;
+  color: white;
+}
+
+.todo-item-content-duedate {
+  background-color: #EFC050;
+  padding: 5px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.todo-item-content-duedate:hover {
+  font-size: 120%;
+  color: #DD4124;
+  transition: 0.2s;
+}
+
+.todo-item-content-button::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.todo-item-content-button {
+  display: inline-block;
+  width: 100%;
+}
+
+.todo-item-content-button > .btn {
+  width: 33.3333333333%;
+  border: 0;
+  border-radius: 0;
+  font-size: 110%;
+  float: left;
+}
+
+.todo-item-content-button > .btn:nth-child(2) {
+  border-width: 0 1px;
+  border-style: solid;
+  border-color: lightgrey;
+}
+
+.todo-item-content-button > .btn:nth-child(1):hover {
+  background-color: #92B6D5;
+}
+
+.todo-item-content-button > .btn:nth-child(2):hover {
+  background-color: #F7786B;
+}
+
+.todo-item-content-button > .btn:nth-child(3):hover {
+  background-color: #79C753;
+}
+
+
+.todo-input-group label {
+  font-size: 130%;
+}
+
+.todo-input-group label[for=todo-input] {
+  margin-top: 10px;
+}
+
+.todo-input-group input[type=text] {
+  width: 100%;
+  padding: 5px 10px;
+  margin: 0 0 20px;
+  box-sizing: border-box;
+  font-size: 120%;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.todo-input-group textarea {
+  width: 100%;
+  padding: 5px 10px;
+  margin: 10px 0 20px;
+  box-sizing: border-box;
+  font-size: 120%;
+  border: 2px solid black;
+}
+
+label[for=dueDate] {
+  display: block;
+}
+
+.date {
+  display: inline-block;
+  width: 70%;
+  padding: 5px 10px;
+  margin: 0 0 20px;
+  box-sizing: border-box;
+  font-size: 130%;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.custom-button {
+  display: inline-block;
+  width: 27%;
+  margin-left: 10px;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 0;
+  font-size: 120% !important;
+  background-color: #009B77;
+}
+
+.todo-complete-list > h3 {
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
+}
+
+.todo-complete-list::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.todo-comp-item {
+  margin-bottom: 2%;
+  height: 40px;
+  width: 100%;
+  border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.todo-comp-item:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.todo-comp-item p:nth-child(1) {
+  display: inline-block;
+  line-height: 40px;
+  font-size: 130%;
+  width: 16%;
+  padding-left: 5px;
+}
+
+.todo-comp-item p:nth-child(2) {
+  display: inline-block;
+  line-height: 40px;
+  font-size: 130%;
+  width: 70%;
+  text-align: center;
+}
+
+.todo-comp-item div {
+  display: inline-block;
+  float: right;
+}
+
+.todo-comp-item .cdelete {
+  border-radius: 0;
+  border: none;
+  height: 38px;
+}
+
+.todo-comp-item .cdelete:hover {
+  background-color: #F7786B;
+}
+
+/* footer always bottom */
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: black;
+  text-align: right;
+  color: white;
+  /*border-bottom: 1px solid white;*/
+}
+
+.footer p {
+  margin: 0;
+  padding-right: 30px;
+}
+

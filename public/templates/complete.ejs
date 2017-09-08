@@ -1,0 +1,16 @@
+<% if(data.user) { %>
+<h3>완료된 일들</h3>
+  <% for(let key in data.todos) { %>
+    <%if(data.user.username === data.todos[key].username && data.todos[key].complete === true) { %>
+		<li class="todo-comp-item" data-id="<%= key %>">
+			<p><i class="fa fa-check"></i> No. <%=data.todos[key].id %></p>
+			<p><%=data.todos[key].title %></p>
+			<div>
+				<div class="btn-group">
+					<button class="cdelete btn btn-default"><i class="fa fa-times"></i></button>
+				</div>
+			</div>
+		</li>
+	<% } %>
+  <% } %>
+<% } %>

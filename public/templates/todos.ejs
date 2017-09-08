@@ -1,0 +1,24 @@
+<% if(data.user) { %>
+<h1>나는 니가 다음주 까지 해야 할 일을 알고 있다.</h1>
+  <% for(let key in data.todos) { %>
+    <%if(data.user.username === data.todos[key].username && data.todos[key].complete === false) { %>
+      <li class="todo-item" data-id="<%= key %>">
+        <ul class="todo-item-content">
+          <li class="todo-item-content-task"><p>No. <%=data.todos[key].id %></p><p><%= data.todos[key].title %></p><i class="fa fa-thumb-tack"></i></li>
+          <li class="todo-item-content-content"><%- data.todos[key].content %></li>
+          <li class="todo-item-content-duedate">마감일 : <%= data.todos[key].duedate.substring(0, 10) %></li>
+          <li class="todo-item-content-button">
+            <button type="button" class="todoUpdate btn btn-default btn-sm"><i class="fa fa-refresh"></i> 내용수정</button>
+            <button type="button" class="todoDelete btn btn-default btn-sm"><i class="fa fa-trash"></i> 삭제</button>
+            <button type="button" class="todoComplete btn btn-default btn-sm"><i class="fa fa-check-circle"></i> 완료</button>
+          </li>
+        </ul>
+      </li>
+    <% } %>
+  <% } %>
+<% } else { %>
+  <h1><i class="fa fa-lock"></i> 로그인이 필요합니다.</h1>
+  <h2><i class="fa fa-diamond"></i> 테스트 계정</h2>
+  <h3> 아이디 : guest / 비밀번호 : guest</h3>
+  <h3> 또는 회원 가입 후 사용할 수 있습니다.</h3>
+<% } %>    

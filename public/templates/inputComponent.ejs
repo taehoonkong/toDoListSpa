@@ -1,0 +1,10 @@
+<% if(data.user) { %>
+<h3>계획을 세워 봅시다.</h3>
+<label for="todo-input"><i class="fa fa-pencil"></i> 제목 입력</label>
+<input class="input" id="todo-input" type="text"><br>
+<label for="todo-details"><i class="fa fa-asterisk"></i> 세부 정보 입력</label>
+<textarea class="details" id="todo-details" rows="6" cols="50"></textarea><br>
+<label for="dueDate"><i class="fa fa-calendar"></i> 목표 날짜 설정</label>
+<input class="date" type="datetime-local" id='dueDate'>
+<input type="button" class="button btn btn-success custom-button" value="계획추가" id="inputBtn">
+<% } %>
